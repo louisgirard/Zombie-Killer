@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class Weapon : MonoBehaviour
@@ -6,16 +7,23 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera fpsCamera;
     [SerializeField] float range = 100f;
     [SerializeField] int damage = 1;
+    [SerializeField] ParticleSystem muzzleFlash;
 
     void Update()
     {
         if (CrossPlatformInputManager.GetButtonDown("Fire1"))
         {
-            Shoot();
+            PlayMuzzleFlash();
+            ProcessRaycast();
         }
     }
 
-    private void Shoot()
+    private void PlayMuzzleFlash()
+    {
+        muzzleFlash.Play();
+    }
+
+    private void ProcessRaycast()
     {
         RaycastHit hit;
         if(Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
