@@ -534,7 +534,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -590,13 +590,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.8063971, y: -0.3844394, z: 0.16810705, w: 0.41673762}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 126.739, y: 4.7269897, z: 53.34899}
 --- !u!1 &940672146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1782,6 +1782,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 350937156777720428, guid: f3a63c68fcc895746b3f7a8d276e5300,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.85534
+      objectReference: {fileID: 0}
+    - target: {fileID: 350937156777720428, guid: f3a63c68fcc895746b3f7a8d276e5300,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1929317
+      objectReference: {fileID: 0}
+    - target: {fileID: 350937156777720428, guid: f3a63c68fcc895746b3f7a8d276e5300,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1708496
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3a63c68fcc895746b3f7a8d276e5300, type: 3}
