@@ -33,7 +33,7 @@ public class Weapon : MonoBehaviour
             EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
             if (enemy)
             {
-                enemy.loseHealth(damage);
+                enemy.LoseHealth(damage);
             }
         }
     }
