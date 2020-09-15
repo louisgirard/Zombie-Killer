@@ -5,11 +5,12 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] int damage = 10;
+    PlayerHealth player;
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerHealth player = FindObjectOfType<PlayerHealth>();
+        player = FindObjectOfType<PlayerHealth>();
     }
 
     public void AttackHitEvent()
