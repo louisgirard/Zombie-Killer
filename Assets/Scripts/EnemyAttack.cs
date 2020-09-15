@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [SerializeField] Transform target;
-    [SerializeField] float damage = 10f;
+    [SerializeField] int damage = 10;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerHealth player = FindObjectOfType<PlayerHealth>();
     }
 
     public void AttackHitEvent()
     {
-        if (!target) { return; }
-        print("attack !!!!!");
+        player.LoseHealth(damage);
     }
 }
