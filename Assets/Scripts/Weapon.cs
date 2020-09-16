@@ -10,6 +10,19 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] ParticleSystem hitEffect;
 
+    Vector3 zoomedOutPosition;
+    Quaternion zoomedOutRotation;
+
+    [Header("Zoomed In Transform")]
+    [SerializeField] Vector3 zoomedInPosition;
+    [SerializeField] Vector3 zoomedInRotation;
+
+    private void Start()
+    {
+        zoomedOutPosition = transform.localPosition;
+        zoomedOutRotation = transform.localRotation;
+    }
+
     void Update()
     {
         if (CrossPlatformInputManager.GetButtonDown("Fire1"))
@@ -42,5 +55,19 @@ public class Weapon : MonoBehaviour
     {
         ParticleSystem impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(impact.gameObject, hitEffect.main.duration);
+    }
+
+    public void Zoom(bool zoomIn)
+    {
+        if (zoomIn)
+        {
+            transform.localPosition = zoomedInPosition;
+            transform.localRotation = Quaternion.Euler(zoomedInRotation);
+        }
+        else
+        {
+            transform.localPosition = zoomedOutPosition;
+            transform.localRotation = zoomedOutRotation;
+        }
     }
 }
