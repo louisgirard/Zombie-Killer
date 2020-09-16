@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] int damage = 1;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] ParticleSystem hitEffect;
+    [SerializeField] Ammo ammoSlot;
 
     Vector3 zoomedOutPosition;
     Quaternion zoomedOutRotation;
@@ -27,9 +28,18 @@ public class Weapon : MonoBehaviour
     {
         if (CrossPlatformInputManager.GetButtonDown("Fire1"))
         {
-            PlayMuzzleFlash();
-            ProcessRaycast();
+            if(ammoSlot.GetAmmo() > 0)
+            {
+                Shoot();
+            }
         }
+    }
+
+    private void Shoot()
+    {
+        PlayMuzzleFlash();
+        ProcessRaycast();
+        ammoSlot.DecreaseAmmo();
     }
 
     private void PlayMuzzleFlash()

@@ -848,6 +848,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8841402350344225330}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1057641755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057641754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cae10ce45417a447b8f8131fae50393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1057641759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,6 +875,8 @@ MonoBehaviour:
   fpsCamera: {fileID: 1616667111}
   zoomedInView: 30
   zoomedOutView: 60
+  zoomOutSensitivity: 2
+  zoomInSensitivity: 0.5
   weapon: {fileID: 766490069}
 --- !u!1001 &1079380762
 PrefabInstance:
@@ -1504,6 +1518,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 1331958400}
   hitEffect: {fileID: 1200400463497446994, guid: 162318cde7fb53e41b0cd109c874b2df,
     type: 3}
+  ammoSlot: {fileID: 0}
   zoomedInPosition: {x: 0, y: -0.291, z: 0.021}
   zoomedInRotation: {x: 0, y: 90, z: 0}
 --- !u!1001 &1749120851
@@ -1934,6 +1949,10 @@ PrefabInstance:
       propertyPath: zoomedInRotation.z
       value: 0.045
       objectReference: {fileID: 0}
+    - target: {fileID: 1107870850, guid: 3d29e8e0bc2bd8249a0117d3c9110b33, type: 3}
+      propertyPath: ammoSlot
+      value: 
+      objectReference: {fileID: 1057641755}
     - target: {fileID: 3328825932033790834, guid: 3d29e8e0bc2bd8249a0117d3c9110b33,
         type: 3}
       propertyPath: m_IsActive
