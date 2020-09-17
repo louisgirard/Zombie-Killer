@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -10,6 +11,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] ParticleSystem hitEffect;
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] float timeBetweenShots = .2f;
 
     Vector3 zoomedOutPosition;
     Quaternion zoomedOutRotation;
@@ -17,6 +19,8 @@ public class Weapon : MonoBehaviour
     [Header("Zoomed In Transform")]
     [SerializeField] Vector3 zoomedInPosition;
     [SerializeField] Vector3 zoomedInRotation;
+
+    bool canShoot = true;
 
     private void Start()
     {
@@ -26,20 +30,25 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (CrossPlatformInputManager.GetButtonDown("Fire1"))
+        if (CrossPlatformInputManager.GetButtonDown("Fire1") && canShoot)
         {
             if(ammoSlot.GetAmmo() > 0)
             {
-                Shoot();
+                StartCoroutine(Shoot());
             }
         }
     }
 
-    private void Shoot()
+    IEnumerator Shoot()
     {
+        canShoot = false;
+
         PlayMuzzleFlash();
         ProcessRaycast();
         ammoSlot.DecreaseAmmo();
+        yield return new WaitForSeconds(timeBetweenShots);
+
+        canShoot = true;
     }
 
     private void PlayMuzzleFlash()
