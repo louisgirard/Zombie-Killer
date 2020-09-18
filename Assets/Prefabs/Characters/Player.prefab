@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpsCamera: {fileID: 8841402351742402694}
-  zoomedInView: 40
+  zoomedInView: 45
   zoomedOutView: 60
   zoomOutSensitivity: 2
   zoomInSensitivity: 0.5
@@ -429,7 +429,7 @@ MonoBehaviour:
   hitEffect: {fileID: 1200400463497446994, guid: 162318cde7fb53e41b0cd109c874b2df,
     type: 3}
   ammoSlot: {fileID: 1057641755}
-  timeBetweenShots: 0.5
+  timeBetweenShots: 0.1
   zoomedInPosition: {x: -0.031, y: -0.526, z: 0.492}
   zoomedInRotation: {x: 0, y: 0.11, z: 0}
 --- !u!114 &4533687186178396857
@@ -463,7 +463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cd8d56469cf64654eaa21e15c6ae7c18, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cd8d56469cf64654eaa21e15c6ae7c18, type: 3}
       propertyPath: m_LocalPosition.x
@@ -536,7 +536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: a7dab2d16f6991f4c9bad8cb498d6aca, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a7dab2d16f6991f4c9bad8cb498d6aca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -860,17 +860,17 @@ PrefabInstance:
     - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.055
+      value: 0.016
       objectReference: {fileID: 0}
     - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.353
+      value: 0.277
       objectReference: {fileID: 0}
     - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.777
+      value: 0.7391
       objectReference: {fileID: 0}
     - target: {fileID: 3350055855090824723, guid: 4a60d8477aafac045a1f56d3a60c7813,
         type: 3}
