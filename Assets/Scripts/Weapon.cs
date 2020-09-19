@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] ParticleSystem hitEffect;
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] AmmoType ammoType;
     [SerializeField] float timeBetweenShots = .2f;
 
     Vector3 zoomedOutPosition;
@@ -22,6 +23,11 @@ public class Weapon : MonoBehaviour
 
     bool canShoot = true;
 
+    private void OnEnable()
+    {
+        canShoot = true;
+    }
+
     private void Start()
     {
         zoomedOutPosition = transform.localPosition;
@@ -32,7 +38,7 @@ public class Weapon : MonoBehaviour
     {
         if (CrossPlatformInputManager.GetButtonDown("Fire1") && canShoot)
         {
-            if(ammoSlot.GetAmmo() > 0)
+            if(ammoSlot.GetAmmo(ammoType) > 0)
             {
                 StartCoroutine(Shoot());
             }
@@ -45,7 +51,7 @@ public class Weapon : MonoBehaviour
 
         PlayMuzzleFlash();
         ProcessRaycast();
-        ammoSlot.DecreaseAmmo();
+        ammoSlot.DecreaseAmmo(ammoType);
         yield return new WaitForSeconds(timeBetweenShots);
 
         canShoot = true;
