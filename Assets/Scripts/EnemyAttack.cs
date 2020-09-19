@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [SerializeField] int damage = 10;
+    [SerializeField] int damage = 5;
     PlayerHealth player;
 
     // Start is called before the first frame update

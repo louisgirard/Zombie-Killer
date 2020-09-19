@@ -4,16 +4,18 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int health = 5;
 
+    bool dead = false;
+
     public bool isDead()
     {
-        return (health <= 0);
+        return dead;
     }
 
     public void LoseHealth(int damage)
     {
         BroadcastMessage("OnDamageTaken");
         health -= damage;
-        if(health <= 0)
+        if(health <= 0 && !isDead())
         {
             KillEnemy();
         }
@@ -21,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void KillEnemy()
     {
+        dead = true;
         GetComponent<Animator>().SetTrigger("die");
     }
 }
