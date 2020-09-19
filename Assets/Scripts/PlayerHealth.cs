@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public void LoseHealth(int damage)
     {
         health -= damage;
+        print("losing health, health = " + health);
         if (health <= 0)
         {
             Cursor.lockState = CursorLockMode.None;

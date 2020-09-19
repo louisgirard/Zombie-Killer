@@ -91,7 +91,6 @@ public class Weapon : MonoBehaviour
         }
         else
         {
-            print("weapon " + name + " zoom out");
             transform.localPosition = zoomedOutPosition;
             transform.localRotation = zoomedOutRotation;
         }
