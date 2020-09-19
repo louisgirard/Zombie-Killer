@@ -26,6 +26,15 @@ public class Ammo : MonoBehaviour
         }
     }
 
+    public void IncreaseAmmo(AmmoType ammoType, int ammount)
+    {
+        AmmoSlot ammoSlot = GetAmmoSlot(ammoType);
+        if (ammoSlot != null)
+        {
+            ammoSlot.ammoAmmount += ammount;
+        }
+    }
+
     public void DecreaseAmmo(AmmoType ammoType)
     {
         AmmoSlot ammoSlot = GetAmmoSlot(ammoType);
