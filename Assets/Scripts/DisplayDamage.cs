@@ -12,9 +12,9 @@ public class DisplayDamage : MonoBehaviour
         canvasGroup = GetComponent<CanvasGroup>();   
     }
 
-    public void show()
+    public void ShowDamage()
     {
-        canvasGroup.alpha = 1;
+        canvasGroup.alpha = .8f;
         StartCoroutine(BloodFade());
     }
 
@@ -22,8 +22,8 @@ public class DisplayDamage : MonoBehaviour
     {
         while(canvasGroup.alpha >= 0)
         {
-            canvasGroup.alpha -= .05f;
-            yield return new WaitForSeconds(.1f);
+            canvasGroup.alpha -= .005f;
+            yield return new WaitForSeconds(.01f);
         }
     }
 }

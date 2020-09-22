@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] Ammo ammoSlot;
     [SerializeField] AmmoType ammoType;
     [SerializeField] float timeBetweenShots = .2f;
+    [SerializeField] AudioClip shotSFX;
 
     Vector3 zoomedOutPosition;
     Quaternion zoomedOutRotation;
@@ -51,6 +52,7 @@ public class Weapon : MonoBehaviour
 
         PlayMuzzleFlash();
         ProcessRaycast();
+        AudioSource.PlayClipAtPoint(shotSFX, transform.position);
         ammoSlot.DecreaseAmmo(ammoType);
         yield return new WaitForSeconds(timeBetweenShots);
 

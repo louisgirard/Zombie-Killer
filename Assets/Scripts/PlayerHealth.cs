@@ -15,4 +15,9 @@ public class PlayerHealth : MonoBehaviour
             SceneManager.LoadScene(1);
         }
     }
+
+    public int GetHealth()
+    {
+        return health;
+    }
 }

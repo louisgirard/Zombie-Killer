@@ -18,6 +18,6 @@ public class EnemyAttack : MonoBehaviour
     public void AttackHitEvent()
     {
         player.LoseHealth(damage);
-        displayDamage.show();
+        displayDamage.ShowDamage();
     }
 }
