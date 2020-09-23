@@ -107,6 +107,7 @@ MonoBehaviour:
   chaseRange: 18
   target: {fileID: 0}
   turnSpeed: 4
+  enemySFX: {fileID: 8300000, guid: 573210bd918480341938a2fce2d8cd40, type: 3}
 --- !u!114 &1500761005
 MonoBehaviour:
   m_ObjectHideFlags: 0

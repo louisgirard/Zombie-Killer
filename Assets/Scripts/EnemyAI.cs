@@ -6,6 +6,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float chaseRange = 10f;
     [SerializeField] Transform target;
     [SerializeField] float turnSpeed = 2f;
+    [SerializeField] AudioClip enemySFX;
     NavMeshAgent navMeshAgent;
     Animator animator;
 
@@ -40,6 +41,7 @@ public class EnemyAI : MonoBehaviour
         else if (distanceToTarget <= chaseRange)
         {
             isProvoked = true;
+            AudioSource.PlayClipAtPoint(enemySFX, transform.position);
         }
     }
 

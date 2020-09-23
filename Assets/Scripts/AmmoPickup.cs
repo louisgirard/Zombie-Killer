@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AmmoPickup : MonoBehaviour
 {
     [SerializeField] int ammount;
     [SerializeField] AmmoType ammoType;
+    [SerializeField] AudioClip ammoSFX;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +12,7 @@ public class AmmoPickup : MonoBehaviour
         {
             Ammo ammoSlot = other.GetComponent<Ammo>();
             ammoSlot.IncreaseAmmo(ammoType, ammount);
+            AudioSource.PlayClipAtPoint(ammoSFX, transform.position);
             Destroy(gameObject);
         }
     }
